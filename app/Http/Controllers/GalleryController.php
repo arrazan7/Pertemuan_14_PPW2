@@ -17,7 +17,7 @@ class GalleryController extends Controller
         $data = array(
             'id' => "posts",
             'menu' => 'Gallery',
-            'galleries' => Post::where('picture', '!=', 
+            'galleries' => Post::where('picture', '!=',
             '')->whereNotNull('picture')->orderBy('created_at', 'desc')->paginate(30)
         );
         return view('gallery.index')->with($data);
@@ -75,7 +75,7 @@ class GalleryController extends Controller
         $post->title = $request->input('title');
         $post->description = $request->input('description');
         $post->save();
-        
+
         return redirect()->to(route('gallery.index'))->with('success', 'Berhasil menambahkan data baru');
     }
 
@@ -117,8 +117,8 @@ class GalleryController extends Controller
             $request->validate([
                 'title' => 'required|string|max:250',
                 'description' => 'required',
-                'picture' => 'image|nullable|mimes:jpg,png,jpeg|max:2048',
-            ]);            
+                'picture' => 'image|nullable|mimes:jpg,png,jpeg|max:100000',
+            ]);
             //delete image
             File::delete(public_path() ."/storage/posts_image/".$post->picture);
             File::delete(public_path() ."/storage/posts_image/large_".$post->picture);
