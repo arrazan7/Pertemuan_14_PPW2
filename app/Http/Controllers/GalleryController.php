@@ -59,7 +59,7 @@ class GalleryController extends Controller
             $filenameSimpan = "{$basename}.{$extension}";
             $path = $request->file('picture')->storeAs('posts_image', $filenameSimpan);
         } else {
-        $filenameSimpan = 'noimage.png';
+            $filenameSimpan = 'noimage.png';
         }
 
         $request->file('picture')->storeAs("posts_image", $smallFilename);

@@ -12,11 +12,11 @@ class GalleryControllerAPI extends Controller
 {
     /**
      * @OA\Post(
-     * path="/api/gallery",
+     * path="/api/postgallery",
      * tags={"gallery"},
-     * summary="Returns a Gallery API response",
-     * description="A gallery to test out the API",
-     * operationId="gallery",
+     * summary="Tambah Gambar",
+     * description="Dengan API ini, kita bisa menambahkan gambar ke galeri.",
+     * operationId="postgallery",
      * @OA\RequestBody(
      *         required=true,
      *         description="Data untuk mengunggah gambar",
@@ -94,8 +94,8 @@ class GalleryControllerAPI extends Controller
      * @OA\Get(
      * path="/api/getgallery",
      * tags={"gallery"},
-     * summary="Returns a Gallery API response",
-     * description="A gallery to test out the API",
+     * summary="Dapatkan Gambar",
+     * description="Dengan API ini, kita bisa mengetahui detail gambar dari kode JSON yang akan ditampilkan",
      * operationId="getgallery",
      *
      * @OA\Response(

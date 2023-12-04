@@ -5,7 +5,7 @@
         "description": "Contoh API doc menggunakan OpenAPI/Swagger",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "email": "choirudin.emchagmail.com"
+            "email": "fayyadharrazan@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",
@@ -14,14 +14,14 @@
         "version": "0.0.1"
     },
     "paths": {
-        "/api/gallery": {
+        "/api/postgallery": {
             "post": {
                 "tags": [
                     "gallery"
                 ],
-                "summary": "Returns a Gallery API response",
-                "description": "A gallery to test out the API",
-                "operationId": "gallery",
+                "summary": "Tambah Gambar",
+                "description": "Dengan API ini, kita bisa menambahkan gambar ke galeri.",
+                "operationId": "postgallery",
                 "requestBody": {
                     "description": "Data untuk mengunggah gambar",
                     "required": true,
@@ -60,8 +60,8 @@
                 "tags": [
                     "gallery"
                 ],
-                "summary": "Returns a Gallery API response",
-                "description": "A gallery to test out the API",
+                "summary": "Dapatkan Gambar",
+                "description": "Dengan API ini, kita bisa mengetahui detail gambar dari kode JSON yang akan ditampilkan",
                 "operationId": "getgallery",
                 "responses": {
                     "default": {

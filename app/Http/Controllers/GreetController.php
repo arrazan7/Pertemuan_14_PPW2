@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 *   title="Contoh API documentation",
 *   termsOfService="http://swagger.io/terms/",
 *   @OA\Contact(
-*       email="choirudin.emchagmail.com"
+*       email="fayyadharrazan@gmail.com"
 *   ),
 *   @OA\License(
 *       name="Apache 2.0",
