@@ -54,7 +54,7 @@ class GalleryControllerAPI extends Controller
         $this->validate($request, [
             'title' => 'required|max:255',
             'description' => 'required',
-            'picture' => 'image|nullable|max:100000'
+            'picture' => 'image|mimes:jpg,png,jpeg|nullable|max:100000'
         ]);
 
         if ($request->hasFile('picture')) {
@@ -74,9 +74,9 @@ class GalleryControllerAPI extends Controller
         $request->file('picture')->storeAs("posts_image", $smallFilename);
         $request->file('picture')->storeAs("posts_image", $mediumFilename);
         $request->file('picture')->storeAs("posts_image", $largeFilename);
-        $this->createThumbnail(public_path() . "/storage/posts_image/" . $smallFilename, 150, 93);
-        $this->createThumbnail(public_path() . "/storage/posts_image/" . $mediumFilename, 300, 185);
-        $this->createThumbnail(public_path() . "/storage/posts_image/" . $largeFilename, 550, 340);
+        $this->createThumbnail(public_path() . "/storage/posts_image/" . $smallFilename, 150, 150);
+        $this->createThumbnail(public_path() . "/storage/posts_image/" . $mediumFilename, 300, 300);
+        $this->createThumbnail(public_path() . "/storage/posts_image/" . $largeFilename, 550, 550);
 
         // dd($request->input());
         $post = new Post;
