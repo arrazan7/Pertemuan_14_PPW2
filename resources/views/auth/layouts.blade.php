@@ -40,7 +40,7 @@
                         <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }} {{ (request()->is('gallery/*')) ? 'active' : '' }}" href="{{ route('gallery.index') }}">Photo Gallery</a>
                     </li>
                     <li class="nav-item me-2">
-                        <a class="nav-link" href="http://127.0.0.1:8000/api/documentation">API Photo Gallery</a>
+                        <a class="nav-link" href="/api/documentation">API Photo Gallery</a>
                     </li>
                     <li class="nav-item me-2">
                         <a class="nav-link {{ (request()->is('users')) ? 'active' : '' }} {{ (request()->is('users/*')) ? 'active' : '' }}" href="{{ route('menampilkan_data') }}">Users Management</a>
