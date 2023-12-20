@@ -2,36 +2,38 @@
 
 @section('content')
 
-<div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">Dashboard</div>
-            <div class="card-body">
-                @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    {{ $message }}
+<div class="container">
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+                <div class="card-body">
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                        {{ $message }}
+                    </div>
+                    @else
+                    <div class="alert alert-success">
+                        You are logged in!
+                    </div>
+                    @endif
                 </div>
-                @else
-                <div class="alert alert-success">
-                    You are logged in!
-                </div>
-                @endif
             </div>
         </div>
     </div>
 </div>
-
-<div class="container mt-5">
+<div class="container-fluid p-0 mt-2">
     <div class="header text-center">
         <img src="koceng.jpg" class="profile-img img-fluid rounded-circle" alt="Foto Profil">
-        <h1>Fayyadh Arrazan Miftakhul</h1>
+        <h1>(Disini Nama Anda, Bukan Nama Mereka)</h1>
         <p>Mahasiswa S1 di Universitas Gadjah Mada</p>
     </div>
-
+</div>
+<div class="container">
     <div class="section">
         <h2>Ringkasan Pribadi</h2>
         <p>
-            Saya adalah seorang mahasiswa bersemangat yang sedang mengejar gelar D4 dalam Teknologi Rekayasa Perangkat Lunak. 
+            Saya adalah seorang mahasiswa bersemangat yang sedang mengejar gelar D4 dalam Teknologi Rekayasa Perangkat Lunak.
             Saya memiliki minat yang kuat dalam web and mobile development dan percaya pada penggabungan pendidikan dan pengalaman praktis.
         </p>
     </div>
@@ -56,12 +58,12 @@
             <strong>Keterampilan Bahasa:</strong><br>
             Bahasa Inggris - Mahir<br>
             Bahasa Arab - Dasar<br><br>
-            
+
             <strong>Keterampilan Komputer:</strong><br>
             Microsoft Office Suite (Word, Excel, PowerPoint)<br>
             Adobe Creative Suite (Photoshop, Illustrator)<br>
             Pengetahuan dasar dalam pemrograman (Python, Java)<br><br>
-            
+
             <strong>Keterampilan Lainnya:</strong><br>
             Komunikasi efektif<br>
             Kemampuan analisis<br>

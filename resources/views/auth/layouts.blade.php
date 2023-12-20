@@ -15,23 +15,36 @@
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container">
+            @guest
             <a class="navbar-brand" href="{{ URL('/') }}">Custom Login Register</a>
+            @else
+            <a class="navbar-brand" href="{{ URL('/') }}">Welcome to My Dashboard</a>
+            @endguest
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     @guest
-                    <li class="nav-item">
+                    <li class="nav-item me-2">
                         <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ route('panggil_login') }}">Login</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item me-2">
                         <a class="nav-link {{ (request()->is('register')) ? 'active' : '' }}" href="{{ route('panggil_register') }}">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ route('gallery.index') }}">Gallery</a>
-                    </li>
                     @else
+                    <li class="nav-item me-2">
+                        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ route('panggil_dashboard') }}">Curriculum Vitae</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }} {{ (request()->is('gallery/*')) ? 'active' : '' }}" href="{{ route('gallery.index') }}">Photo Gallery</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" href="http://127.0.0.1:8000/api/documentation">API Photo Gallery</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link {{ (request()->is('users')) ? 'active' : '' }} {{ (request()->is('users/*')) ? 'active' : '' }}" href="{{ route('menampilkan_data') }}">Users Management</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::user()->name }}
@@ -51,7 +64,7 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid m-0 p-0">
         @yield('content')
     </div>
 

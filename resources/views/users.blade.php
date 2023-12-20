@@ -2,7 +2,8 @@
 
 @section('content')
 
-<table class="table table-bordered table-hover">
+<div class="container">
+    <table class="table table-bordered table-hover">
         <thead class="table-dark">
             <tr>
                 <th>ID</th>
@@ -15,7 +16,7 @@
         <tbody>
             @foreach ($pengguna as $user)
                 <tr>
-                
+
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
@@ -40,5 +41,6 @@
             @endforeach
         </tbody>
     </table>
+</div>
 
 @endsection
